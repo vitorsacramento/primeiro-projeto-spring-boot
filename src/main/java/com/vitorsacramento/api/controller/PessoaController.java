@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vitorsacramento.api.model.Pessoa;
+import com.vitorsacramento.api.repository.PessoaRepository;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @RestController
 public class PessoaController {
 	
-	@PersistenceContext
-	private EntityManager em;
+	private PessoaRepository pessoaRepository;
 
 	@GetMapping("/pessoas")
 	public List<Pessoa> listar() {
-		return em.createQuery("FROM Pessoa", Pessoa.class).getResultList();
+		return pessoaRepository.findAll();
 	}
 }
