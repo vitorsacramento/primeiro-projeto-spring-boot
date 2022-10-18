@@ -3,7 +3,7 @@
 Estudos iniciais de Spring Boot. 
 
 ## Funcionamento
-O projeto consta com um endpoint '/pessoas' e este contém um método "listar" que faz uma requisição do tipo GET. A requisição retorna uma pequena lista com alguns dados, tais como id, nome, idade etc.
+O projeto consta com alguns registros que podem ser recuperados via requisição GET, acessando um dos endpoints disponíveis.
 
 ## Executando
 1 - Clone o projeto;
@@ -17,7 +17,20 @@ O projeto consta com um endpoint '/pessoas' e este contém um método "listar" q
 __OBS: O Banco de Dados utilizado foi o H2 Database em memória.__
 
 ## Visualizando
-Após ter o projeto todo em funcionamento e em execução, chame o recurso https://locahost:8080/pessoas via navegador ou Postman, fazendo uma requisição do tipo GET.
+Após ter o projeto todo em funcionamento e em execução, chame um dos recursos via navegador ou Postman (fazendo uma requisição do tipo GET).
+
+#### Listar todos os nomes:
+- localhost:8080/pessoas/ 
+
+#### Lista por nome
+- localhost:8080/pessoas/Nome%20Sobrenome 
+
+__EX: localhost:8080/pessoas/Peter%20Parker__
+
+#### Lista por nome que contenha
+- localhost:8080/pessoas/com/Parte-do-nome-ou-letra
+
+__EX: localhost:8080/pessoas/com/P__
 
 ## Bibliotecas
 - Spring Web;
